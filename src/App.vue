@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template> 
-  <div class="bg-gradient-to-br w-screen relative h-screen py-16 from-cyan-500 to-blue-500">
+  <div class="bg-gradient-to-br w-screen relative h-screen py-16 from-cyan-500 to-blue-500 overflow-hidden">
 
     <!-- Overlay -->
     <div style="background-image: url('water.jpg'); background-size: cover;"
