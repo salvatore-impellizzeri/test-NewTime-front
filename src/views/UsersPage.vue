@@ -1,10 +1,12 @@
 <script>
 import axios from 'axios';
 import Card from '../components/Card.vue';
+import { store } from '../store';
 
 export default {
   data() {
     return {
+      store,
       users: [],
       titles:[
         '<i class="fa-solid fa-user"></i>',
@@ -70,6 +72,13 @@ export default {
     <transition name="confirm-fade">
       <div v-if="confirmBox" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
         L'utente è stato eliminato con successo!
+      </div>   
+    </transition>
+
+    <!-- Box Conferma Edit -->
+    <transition name="confirm-fade">
+      <div v-if="this.store.userUpdate" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
+        L'utente è stato aggiornato con successo!
       </div>   
     </transition>
     </div>

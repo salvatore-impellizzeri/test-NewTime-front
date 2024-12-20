@@ -1,16 +1,17 @@
 <script>
 import axios from 'axios';
+import { store } from '../store';
 
 export default {
   data() {
     return {
+      store,
       user: null,
       updatedUser: {
         name: '',
         surname: '',
         email: '',
       },
-      confirmBox: false,
     };
   },
 
@@ -41,8 +42,8 @@ export default {
       axios
         .put(`http://127.0.0.1:8000/api/users/${userId}`, this.updatedUser)
         .then(() => {
+          store.handleUserUpdate();
           this.$router.push('/');
-          this.confirmBox = true;
         })
         .catch((err) => {
           console.error("Errore durante il salvataggio:", err);
@@ -110,13 +111,6 @@ export default {
     <div v-else>
       <div class="text-center text-white text-xl">Caricamento...</div>
     </div>
-
-    <!-- Box Conferma Edit -->
-    <transition name="confirm-fade">
-      <div v-if="confirmBox" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
-        L'utente è stato eliminato con successo!
-      </div>   
-    </transition>
   </div>
 </template>
 
