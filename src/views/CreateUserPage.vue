@@ -163,7 +163,7 @@ export default {
           @click="createUser"
           class="mt-12 w-full text-white py-3 px-4 rounded-lg shadow-lg transition-all ease-in-out duration-200 border-white border hover:bg-white hover:text-black hover:scale-105"
         >
-          Salva
+          Crea
         </button>
 
         <router-link to="/">
