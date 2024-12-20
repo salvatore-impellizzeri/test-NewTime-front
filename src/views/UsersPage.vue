@@ -38,7 +38,7 @@ export default {
     handleScroll(event) {
       event.preventDefault();
       const container = event.currentTarget;
-      const scrollAmount = container.clientHeight + 20; 
+      const scrollAmount = 176 + 20; 
       
       if (event.deltaY > 0) {
         container.scrollTop += scrollAmount;
@@ -51,12 +51,12 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-wrap flex-col">
     <div class="text-center text-white drop-shadow-lg text-5xl font-semibold">
       Utenti
     </div>
     <div 
-      class="rounded-3xl grid grid-cols-3 gap-x-5 gap-y-1 mt-10 px-10 scroll-transition overflow-y-auto custom-scrollbar"
+      class="rounded-3xl grid 2xl:grid-cols-3 max-lg:grid-cols-1 max-2xl:grid-cols-2 gap-x-5 gap-y-1 mt-10 px-10 scroll-transition overflow-y-auto custom-scrollbar"
       style="height: calc((176px * 3) + (20px * 3));"
       @wheel="handleScroll"
     >

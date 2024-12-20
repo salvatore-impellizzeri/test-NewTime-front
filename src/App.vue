@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template> 
-  <div class="bg-gradient-to-br w-screen relative h-screen py-16 from-cyan-500 to-blue-500 overflow-hidden">
+  <div class="bg-gradient-to-br w-screen relative h-screen py-16 from-cyan-500 to-blue-500 overflow-hidden flex items-center justify-center">
 
     <!-- Overlay -->
     <div style="background-image: url('water.jpg'); background-size: cover;"
@@ -41,7 +41,7 @@ export default {
     </div>
 
     <!-- Box Main -->
-    <div class="w-1/2 h-[100%] rounded-3xl glass-box mx-auto p-16">
+    <div class="w-1/2 h-[85%] rounded-3xl glass-box mx-auto p-16 max-lg:w-11/12 max-2xl:w-11/12 2xl:w-9/12">
       <router-view></router-view>
     </div>
 
