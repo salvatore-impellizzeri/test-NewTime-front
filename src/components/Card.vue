@@ -55,7 +55,7 @@ export default {
 </script>
 
 <template>
-  <div class="rounded-3xl relative shadow-lg py-7 px-5 bg-white/10 mb-4">
+  <div class="rounded-3xl border border-white/50 relative shadow-lg py-7 px-5 bg-white/10 mb-4">
     <div 
       class="text-white font-semibold text-center transition-all ease-in-out duration-200"
       :class="[

@@ -16,6 +16,10 @@ export default {
     isUserEditPage() {
       return this.$route.name === 'edit-user';
     },
+
+    isUserCreatePage() {
+      return this.$route.name === 'create-user';
+    },
   },
 
   mounted(){
@@ -50,7 +54,7 @@ export default {
     <div 
       class="w-1/2 rounded-3xl glass-box max-sm:px-5 mx-auto p-16 max-lg:w-11/12 max-2xl:w-11/12"
       :class="[
-        isUserEditPage ? 'h-auto w-auto' : ' h-[100%] 2xl:w-9/12'
+        isUserEditPage || isUserCreatePage ? 'h-auto w-auto' : ' h-[100%] 2xl:w-9/12'
       ]"
     >
       <router-view></router-view>

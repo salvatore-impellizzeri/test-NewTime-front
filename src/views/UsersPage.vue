@@ -57,7 +57,7 @@ export default {
     </div>
 
     <!-- Creation Button -->
-    <router-link class="absolute top-18 right-44" to="create">
+    <router-link class="absolute top-18 right-44" to="/user-create">
       <button class=" bg-gradient-to-br from-blue-400/35 to-cyan-300/35 text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -87,6 +87,13 @@ export default {
     <transition name="confirm-fade">
       <div v-if="this.store.userUpdate" class="fixed top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
         L'utente è stato aggiornato con successo!
+      </div>   
+    </transition>
+
+    <!-- Box Conferma Creation -->
+    <transition name="confirm-fade">
+      <div v-if="this.store.userCreated" class="fixed top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
+        L'utente è stato creato con successo!
       </div>   
     </transition>
     </div>

@@ -7,5 +7,12 @@ export const store = reactive({
         setTimeout(() => {
             this.userUpdate = false;
           }, 3000);
+    },
+    userCreated: false,
+    handleUserCreated(){
+        this.userCreated = true;
+        setTimeout(() => {
+            this.userCreated = false;
+          }, 3000);
     }
 });
