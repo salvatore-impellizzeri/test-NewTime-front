@@ -70,10 +70,12 @@ export default {
       </div>
       <div class="flex justify-center space-x-4 mt-5">
         <!-- Icona Modifica -->
-        <button 
-          class="rounded-full shadow-md w-[40px] text-black aspect-square flex show-button items-center justify-center transition duration-300">
-          <i class="fa-solid fa-user-pen z-20"></i>
-        </button>
+        <router-link :to="{ name: 'edit-user', params: { id: id } }">
+          <button 
+            class="rounded-full shadow-md w-[40px] text-black aspect-square flex show-button items-center justify-center transition duration-300">
+            <i class="fa-solid fa-user-pen z-20"></i>
+          </button>        
+        </router-link>
         <!-- Icona Elimina -->
         <button
           @click="handleModal(user)" 

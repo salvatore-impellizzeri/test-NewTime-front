@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import UsersPage from './views/UsersPage.vue';
+import EditUserPage from './views/EditUserPage.vue';
 
 const routes = [
   {
@@ -7,11 +8,11 @@ const routes = [
     name: 'users',
     component: UsersPage,
   },
-  // {
-  //   path: '/user-edit/:id',
-  //   name: 'edit-user',
-  //   component: EditUser,
-  // },
+  {
+    path: '/user-edit/:id',
+    name: 'edit-user',
+    component: EditUserPage,
+  },
   // {
   //   path: '/user/:id',
   //   name: 'show-user',

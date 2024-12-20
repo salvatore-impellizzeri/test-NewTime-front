@@ -38,11 +38,11 @@ export default {
 
     handleConfirm(userId) {
         this.users = this.users.filter(user => user.id !== userId);
-        this.confirmBox = true;
+        this.confirmBox = true; 
         setTimeout(() => {
             this.confirmBox = false;
         }, 3000);
-    }
+    },
 }
 
 }
@@ -66,7 +66,7 @@ export default {
         @delete-event="handleConfirm"
       />
 
-    <!-- Box Verifica Delete -->
+    <!-- Box Conferma Delete -->
     <transition name="confirm-fade">
       <div v-if="confirmBox" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
         L'utente è stato eliminato con successo!
@@ -87,7 +87,7 @@ export default {
 
 /* CONFIRM FADE */
 
-.confirm-fade-enter-active,
+  .confirm-fade-enter-active,
   .confirm-fade-leave-active {
     transition: opacity 0.2s ease-in-out;
   }

@@ -12,6 +12,12 @@ export default {
 
   },
 
+  computed:{
+    isUserEditPage() {
+      return this.$route.name === 'edit-user';
+    },
+  },
+
   mounted(){
     this.getUsers();
   },  
@@ -41,7 +47,12 @@ export default {
     </div>
 
     <!-- Box Main -->
-    <div class="w-1/2 h-[100%] rounded-3xl glass-box max-sm:px-5 mx-auto p-16 max-lg:w-11/12 max-2xl:w-11/12 2xl:w-9/12">
+    <div 
+      class="w-1/2 rounded-3xl glass-box max-sm:px-5 mx-auto p-16 max-lg:w-11/12 max-2xl:w-11/12"
+      :class="[
+        isUserEditPage ? 'h-auto w-auto' : ' h-[100%] 2xl:w-9/12'
+      ]"
+    >
       <router-view></router-view>
     </div>
 
