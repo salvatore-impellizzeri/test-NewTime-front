@@ -53,8 +53,16 @@ export default {
 <template>
   <div class="grid h-full grid-cols-1">
     <div class="text-center text-white drop-shadow-lg text-5xl font-semibold max-sm:text-4xl">
-      Utenti
+       Lista utenti
     </div>
+
+    <!-- Creation Button -->
+    <router-link class="absolute top-18 right-44" to="create">
+      <button class=" bg-gradient-to-br from-blue-400/35 to-cyan-300/35 text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </router-link>
+
     <div 
       class="rounded-3xl relative h-[95%] grid 2xl:grid-cols-3 max-lg:grid-cols-1 max-sm:px-0 max-2xl:grid-cols-2 gap-x-5 gap-y-1 mt-10 max-sm:mt-2 px-10 max-sm:scale-90 overflow-y-auto custom-scrollbar"
     >
@@ -70,14 +78,14 @@ export default {
 
     <!-- Box Conferma Delete -->
     <transition name="confirm-fade">
-      <div v-if="confirmBox" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
+      <div v-if="confirmBox" class="fixed top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
         L'utente è stato eliminato con successo!
       </div>   
     </transition>
 
     <!-- Box Conferma Edit -->
     <transition name="confirm-fade">
-      <div v-if="this.store.userUpdate" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
+      <div v-if="this.store.userUpdate" class="fixed top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-lg text-center text-lg z-50">
         L'utente è stato aggiornato con successo!
       </div>   
     </transition>
@@ -87,7 +95,7 @@ export default {
 <style scoped>
 
 .shadow-icon{
-  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.144);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.144);
 }
 
 .bg-icon{
