@@ -29,12 +29,23 @@ export default {
       .get('http://127.0.0.1:8000/api/users')
       .then((res) => {
         this.users = res.data;
-        console.log(this.users);
       })
       .catch((err) => {
         console.error("Errore nella richiesta API:", err);
       });
-    }
+    },
+
+    handleScroll(event) {
+      event.preventDefault();
+      const container = event.currentTarget;
+      const scrollAmount = container.clientHeight + 20; 
+      
+      if (event.deltaY > 0) {
+        container.scrollTop += scrollAmount;
+      } else {
+        container.scrollTop -= scrollAmount;
+      }
+    },
   }
 }
 </script>
@@ -45,10 +56,12 @@ export default {
       Utenti
     </div>
     <div 
-      class="rounded-3xl grid grid-cols-3 gap-5 p-10 overflow-y-auto h-[500px]"
-      style="height: calc((176px * 3) + (20px * 2));"
+      class="rounded-3xl grid grid-cols-3 gap-x-5 gap-y-1 mt-10 px-10 scroll-transition overflow-y-auto custom-scrollbar"
+      style="height: calc((176px * 3) + (20px * 3));"
+      @wheel="handleScroll"
     >
-      <Card v-for="(user, index) in this.users" 
+      <Card
+        v-for="(user, index) in this.users"  
         :key="index"
         :name="user.name"
         :surname="user.surname"
@@ -58,11 +71,36 @@ export default {
   </div>
 </template>
 <style scoped>
+
+.scroll-transition{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 .shadow-icon{
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.144);
 }
 
 .bg-icon{
   background-color: rgba(255, 255, 255, 0.185);
+}
+
+/* Stile della barra di scorrimento */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 </style>
