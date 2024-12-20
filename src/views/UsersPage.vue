@@ -58,14 +58,18 @@ export default {
 
     <!-- Creation Button -->
     <router-link class="absolute top-18 right-44" to="/user-create">
-      <button class=" bg-gradient-to-br from-blue-400/35 to-cyan-300/35 text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white">
+      <button class="bg-gradient-to-br from-blue-400/35 to-cyan-300/35 text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white hover:scale-110 transition-all ease-in-out duration-200">
         <i class="fa-solid fa-plus"></i>
       </button>
     </router-link>
 
+    <!-- Container -->
     <div 
-      class="rounded-3xl relative h-[95%] grid 2xl:grid-cols-3 max-lg:grid-cols-1 max-sm:px-0 max-2xl:grid-cols-2 gap-x-5 gap-y-1 mt-10 max-sm:mt-2 px-10 max-sm:scale-90 overflow-y-auto custom-scrollbar"
+      class="rounded-3xl relative h-[96%] grid 2xl:grid-cols-3 max-lg:grid-cols-1 max-sm:px-0 max-2xl:grid-cols-2 gap-x-5 gap-y-1 mt-10 max-sm:mt-2 px-10 max-sm:scale-90 overflow-y-auto custom-scrollbar"
     >
+
+      <!-- Cards -->
+
       <Card
         v-for="(user, index) in this.users"  
         :key="index"
@@ -103,6 +107,10 @@ export default {
 
 .shadow-icon{
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.144);
+}
+
+.shadow-icon:hover {
+  box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.644);
 }
 
 .bg-icon{

@@ -122,7 +122,7 @@ export default {
               type="text"
               id="name"
               v-model="user.name"
-              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/25 text-white"
+              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/10 text-white"
             />
             <p v-if="errors.name" class="text-red-500 font-medium text-sm mt-1">{{ errors.name }}</p>
           </div>
@@ -136,7 +136,7 @@ export default {
               type="text"
               id="surname"
               v-model="user.surname"
-              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/25 text-white"
+              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/10 text-white"
             />
             <p v-if="errors.surname" class="text-red-500 font-medium text-sm mt-1">{{ errors.surname }}</p>
           </div>
@@ -150,18 +150,29 @@ export default {
               type="email"
               id="email"
               v-model="user.email"
-              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/25 text-white"
+              class="w-full mt-2 p-3 shadow-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-300 focus:outline-none bg-white/10 text-white"
             />
             <p v-if="errors.email" class="text-red-500 font-medium text-sm mt-1">{{ errors.email }}</p>
             <p v-if="isCheckingEmail" class="text-white text-sm mt-1">Verifica email in corso...</p>
           </div>
         </div>
+
+        <!-- BUTTONS -->
+
         <button
           @click="createUser"
-          class="mt-12 w-full text-white py-3 px-4 rounded-lg shadow-lg transition-all ease-in-out duration-200 border-white border hover:bg-white hover:text-cyan-500 hover:scale-105"
+          class="mt-12 w-full text-white py-3 px-4 rounded-lg shadow-lg transition-all ease-in-out duration-200 border-white border hover:bg-white hover:text-black hover:scale-105"
         >
           Salva
         </button>
+
+        <router-link to="/">
+            <button
+                class="mt-5 w-full text-white py-3 px-4 rounded-lg shadow-lg transition-all ease-in-out duration-200 bg-black hover:scale-105 hover:bg-white hover:text-black"
+            >
+                Torna alla Home
+            </button>
+        </router-link>
       </div>
     </div>
 </template>

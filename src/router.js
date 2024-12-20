@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import UsersPage from './views/UsersPage.vue';
 import EditUserPage from './views/EditUserPage.vue';
 import CreateUserPage from './views/CreateUserPage.vue';
+import NotFoundPage from './views/NotFoundPage.vue';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/user-create',
     name: 'create-user',
     component: CreateUserPage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: NotFoundPage,
   },
 ];
 

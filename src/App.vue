@@ -43,11 +43,11 @@ export default {
 </script>
 
 <template> 
-  <div class="bg-gradient-to-br w-screen relative h-screen py-16 from-cyan-500 to-blue-500 overflow-hidden flex items-center justify-center">
+  <div class="bg-gradient-to-b w-screen relative h-screen py-16 from-cyan-500 to-blue-700 overflow-hidden flex items-center justify-center">
 
     <!-- Overlay -->
     <div style="background-image: url('water.jpg'); background-size: cover;"
-    class="absolute top-0 left-0 right-0 h-screen opacity-15">
+    class="absolute top-0 left-0 right-0 h-screen opacity-20">
     </div>
 
     <!-- Box Main -->
