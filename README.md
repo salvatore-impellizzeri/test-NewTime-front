@@ -19,10 +19,10 @@ Questo progetto è il frontend di un'applicazione fullstack sviluppata con Vue.j
    ```npm install```
 
 ### 3. Configura l'ambiente:
-   - Crea un file .env nella cartella frontend e specifica l'URL del backend: 
-     ```
-     VITE_API_URL=http://localhost:8000/api
-     ```
+Crea un file .env nella cartella frontend e specifica l'URL del backend: 
+```
+VITE_API_URL=http://localhost:8000/api
+```
 
 ### 4. Avvia il server di sviluppo:
    ```npm run dev```
