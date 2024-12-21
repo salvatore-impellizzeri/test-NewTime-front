@@ -1,5 +1,26 @@
-# Vue 3 + Vite
+# Frontend - Vue.js
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Descrizione
+Questo progetto è il frontend di un'applicazione fullstack sviluppata con Vue.js. Include:
+- **Vue Router** per la gestione delle rotte.
+- **Axios** per effettuare richieste HTTP.
+- **Tailwind CSS** per la progettazione dell'interfaccia utente.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Requisiti
+- **Node.js** >= 16.14.0
+- **npm** >= 8.0.0
+
+## Installazione
+
+1. **Clona il repository:**
+   - git clone https://github.com/salvatore-impellizzeri/test-NewTime-front.git
+   
+2. **Installa le dipendenze:**
+   - npm install
+
+3. **Configura l'ambiente:**
+   - Crea un file .env nella cartella frontend e specifica l'URL del backend: 
+   - VITE_API_URL=http://localhost:8000/api
+
+4. **Avvia il server di sviluppo:**
+   - npm run dev
