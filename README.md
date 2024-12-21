@@ -13,14 +13,14 @@ Questo progetto è il frontend di un'applicazione fullstack sviluppata con Vue.j
 ## Installazione
 
 1. **Clona il repository:**
-   git clone https://github.com/salvatore-impellizzeri/test-NewTime-front.git
+   - git clone https://github.com/salvatore-impellizzeri/test-NewTime-front.git
    
 2. **Installa le dipendenze:**
-   npm install
+   - npm install
 
 3. **Configura l'ambiente:**
-   Crea un file .env nella cartella frontend e specifica l'URL del backend: 
-   VITE_API_URL=http://localhost:8000/api
+   - Crea un file .env nella cartella frontend e specifica l'URL del backend: 
+   - VITE_API_URL=http://localhost:8000/api
 
 4. **Avvia il server di sviluppo:**
-   npm run dev
+   - npm run dev
