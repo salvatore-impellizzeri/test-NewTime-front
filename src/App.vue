@@ -22,22 +22,8 @@ export default {
     },
   },
 
-  mounted(){
-    this.getUsers();
-  },  
-
   methods: {
-    getUsers(){
-      axios
-      .get('http://127.0.0.1:8000/api/users')
-      .then((res) => {
-        this.users = res.data;
-        console.log(this.users);
-      })
-      .catch((err) => {
-        console.error("Errore nella richiesta API:", err);
-      });
-    }
+
   }
 }
 </script>

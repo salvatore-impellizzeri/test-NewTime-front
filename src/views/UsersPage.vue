@@ -29,7 +29,7 @@ export default {
   methods: {
     getUsers() {
         axios
-          .get('http://127.0.0.1:8000/api/users')
+          .get(`${store.apiUrl}/users`)
           .then((res) => {
               this.users = res.data;
           })
@@ -57,9 +57,9 @@ export default {
     </div>
 
     <!-- Creation Button -->
-    <router-link class="absolute top-18 right-44 max-lg:bottom-20 max-lg:scale-125 max-sm:bottom-16 max-lg:right-1/2 translate-x-1/2" to="/user-create">
-      <button class="bg-gradient-to-br from-blue-400/35 to-cyan-300/35 text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white hover:scale-110 transition-all ease-in-out duration-200">
-        <i class="fa-solid fa-plus"></i>
+    <router-link class="absolute top-18 right-44 max-lg:scale-125 max-lg:bottom-14 max-lg:right-1/2 translate-x-1/2" to="/user-create">
+      <button class="max-md:scale-90 max-lg:flex max-lg:w-auto max-lg:space-x-3 max-lg:items-center max-lg:aspect-auto max-lg:py-3 max-lg:px-7 bg-gradient-to-br from-blue-400/35 to-cyan-300/35 max-lg:text-sm text-2xl rounded-full shadow-icon w-[45px] aspect-square text-white hover:scale-110 transition-all ease-in-out duration-200">
+        <span class="lg:hidden">Crea Utente</span><i class="fa-solid fa-plus"></i>
       </button>
     </router-link>
 

@@ -1,10 +1,11 @@
 <script>
-
+import { store } from '../store';
 import axios from 'axios';
 
 export default {
   data() {
     return {
+      store,
       users: null,
       isModal: false,
       selectedUser: null,
@@ -42,7 +43,7 @@ export default {
 
     async deleteUser(id) {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/users/${id}`);
+            await axios.delete(`${store.apiUrl}/users/${id}`);
             this.isModal = false; 
             this.$emit('delete-event', id);
         } catch (error) {
@@ -92,7 +93,7 @@ export default {
         v-if="isModal" 
         class="absolute top-0 left-0 right-0 bg-black/70 h-full w-full rounded-3xl z-50 modal flex items-center justify-center flex-col"
       >
-        <div class="text-white font-semibold text-cente">
+        <div class="text-white font-semibold text-center">
           Sei sicuro di voler eliminare questo utente?
         </div>
         <div class="flex justify-center space-x-4 mt-5">

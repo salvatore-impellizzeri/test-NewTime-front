@@ -29,13 +29,13 @@ export default {
     async validateEmailExists() {
       // Controlla se l'email è stata modificata rispetto all'originale
       if (this.updatedUser.email === this.user.email) {
-        return true; // Nessuna verifica necessaria
+        return true;
       }
 
       this.isCheckingEmail = true;
 
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/check-email', {
+        const response = await axios.post(`${store.apiUrl}/check-email`, {
           email: this.updatedUser.email,
         });
 
@@ -48,7 +48,7 @@ export default {
 
         return true;
       } catch (error) {
-        console.error('Errore durante la verifica dell\'email:', error);
+        console.error("Errore durante la verifica dell'email:", error);
         this.isCheckingEmail = false;
         return false;
       }
@@ -58,7 +58,7 @@ export default {
       const userId = this.$route.params.id;
 
       axios
-        .get(`http://127.0.0.1:8000/api/users/${userId}`)
+        .get(`${store.apiUrl}/users/${userId}`)
         .then((res) => {
           this.user = res.data;
           this.updatedUser = {
@@ -75,7 +75,6 @@ export default {
     async validateFields() {
       let isValid = true;
 
-      // Reset dei messaggi di errore
       this.errors = {
         name: '',
         surname: '',
@@ -126,7 +125,7 @@ export default {
       const userId = this.$route.params.id;
 
       axios
-        .put(`http://127.0.0.1:8000/api/users/${userId}`, this.updatedUser)
+        .put(`${store.apiUrl}/users/${userId}`, this.updatedUser)
         .then(() => {
           store.handleUserUpdate();
           this.$router.push('/');

@@ -23,7 +23,7 @@ export default {
     async validateEmailExists() {
       this.isCheckingEmail = true;
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/check-email', {
+        const response = await axios.post(`${store.apiUrl}/check-email`, {
           email: this.user.email,
         });
         this.isCheckingEmail = false;
@@ -90,7 +90,7 @@ export default {
       }
 
       axios
-        .post(`http://127.0.0.1:8000/api/users`, this.user)
+        .post(`${store.apiUrl}/users`, this.user)
         .then(() => {
           store.handleUserCreated();
           this.$router.push('/');
